@@ -129,11 +129,9 @@ if ($isAdmin) {
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <?php if ($isAdmin): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="change_password.php">Change Password</a>
                     </li>
-                    <?php endif; ?>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Logout</a>
                     </li>
