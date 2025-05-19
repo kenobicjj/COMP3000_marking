@@ -1,6 +1,5 @@
 <?php
 // edit_report.php - Edit detailed report for a student
-session_start();
 require_once 'includes/config.php';
 require_once 'functions.php';
 requireLogin();

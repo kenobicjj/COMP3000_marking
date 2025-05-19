@@ -1,6 +1,6 @@
 <?php
 // printable_report.php - Display printer-friendly report that can be exported to PDF
-session_start();
+
 require_once 'includes/config.php';
 require_once 'functions.php';
 requireLogin();
@@ -243,9 +243,11 @@ $communicationMark = calculateAverage($practiceReport['FM_Communication'] ?? 0, 
                 <div class="student-info">Programme: <?php echo $courseworkReport['Programme']; ?></div>
                 <div class="student-info">First Marker: <?php echo htmlspecialchars($firstMarkerName); ?></div>
                 <div class="student-info">Second Marker: <?php echo htmlspecialchars($secondMarkerName); ?></div>
+		<div class="student-info">Total Coursework: <?php echo formatMark($averageMarksCoursework); ?></div>
+		<div class="student-info">Total Coursework: <?php echo formatMark($averageMarksPractice); ?></div>
             </div>
-            <div id="report-header"><strong>Total Marks:(<?php echo formatMark($averageMarksCoursework);?>x80%)+(<?php echo formatMark($averageMarksPractice);?>x20%)=<?php echo formatMark($averageTotal);?></strong></div>
-            <!-- Coursework Report Table -->
+           <!-- Coursework Report Table -->
+	   <h3>Coursework</h3>
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -314,6 +316,7 @@ $communicationMark = calculateAverage($practiceReport['FM_Communication'] ?? 0, 
             </table>
 			<div class="page-break"></div>
             <!-- Practice Report Table -->
+	    <h3>Practice</h3>
             <table class="table table-bordered">
                 <thead>
                     <tr>
